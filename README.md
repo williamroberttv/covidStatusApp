@@ -6,8 +6,8 @@ O app mostra dados por estado brasileiros, além de dados unificados de países 
 ![](/screenshots/screenshotcovidapp1.png)
 ![](/screenshots/screenshotcovidapprequest.png)
 
-# Files
+# Objetivos
  
  - [x] ~~Javascript/HTML/CSS~~
- - [ ] ReactJS
- - [ ] ReactNative
+ - [ ] WebApp com ReactJS
+ - [ ] MobileApp com ReactNative
