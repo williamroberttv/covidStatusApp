@@ -6,6 +6,8 @@ const divChina = document.querySelector("#china");
 const divDeaths = document.querySelector("#deaths");
 const divSuspects = document.querySelector("#suspects");
 const divCases = document.querySelector("#cases");
+const divTitle = document.querySelector("#countries-title");
+const divDate = document.querySelector("#date");
 
 function createCountries(
   cases,
@@ -18,7 +20,7 @@ function createCountries(
   cdeaths,
   csuspects
 ) {
-  const covidTitle = document.createElement("h1");
+  const covidTitle = document.createElement("h3");
   covidTitle.innerHTML = "Covid-19 no Mundo";
 
   const brazilText = document.createElement("h3");
@@ -48,10 +50,12 @@ function createCountries(
   const countryChinaSuspects = document.createElement("p");
   countryChinaSuspects.innerHTML = `Recuperados: ${csuspects}`;
 
+  divTitle.innerHTML = "";
   divBrazil.innerHTML = "";
   divItalia.innerHTML = "";
   divChina.innerHTML = "";
 
+  divTitle.appendChild(covidTitle);
   divBrazil.appendChild(brazilText);
   divBrazil.appendChild(countryBrazilCases);
   divBrazil.appendChild(countryBrazilDeaths);
@@ -67,14 +71,14 @@ function createCountries(
 }
 
 button.addEventListener("click", requisicao);
-function createResult(covidStates, covidDeaths, covidCases, covidSuspects) {
+function createResult(covidStates, covidDeaths, covidCases, covidSuspects, date) {
   const cases = document.createElement("p");
   const casesLogo = document.createElement("img");
   casesLogo.setAttribute(
     "src",
     "/assets/coronavirus.svg"
   );
-  cases.innerHTML = `${covidStates} tem ${covidCases} casos de Covid-19 confirmados.`;
+  cases.innerHTML = `${covidStates} tem ${covidCases} casos confirmados.`;
 
   const deaths = document.createElement("p");
   const deathLogo = document.createElement("img");
@@ -92,10 +96,16 @@ function createResult(covidStates, covidDeaths, covidCases, covidSuspects) {
   const suspects = document.createElement("p");
   suspects.innerHTML = `${covidSuspects} casos são suspeitos.`; //${suspectLogo};
   
+  const dateTime = document.createElement("p");
+  const dateTransform = new Date(date);
+  dateTime.innerHTML = `Última atualização em : ${dateTransform}`;
+
+  divDate.innerHTML = "";
   divCases.innerHTML = "";
   divSuspects.innerHTML = "";
   divDeaths.innerHTML = "";
-
+  
+  divDate.appendChild(dateTime);
   divCases.appendChild(cases);
   divCases.appendChild(casesLogo);
   divDeaths.appendChild(deaths);
@@ -115,8 +125,10 @@ function requisicao() {
         jsonBody.state,
         jsonBody.deaths,
         jsonBody.cases,
-        jsonBody.suspects
+        jsonBody.suspects,
+        jsonBody.datetime
       );
+      console.log(jsonBody);
     });
 }
 
