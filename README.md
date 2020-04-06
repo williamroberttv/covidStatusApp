@@ -5,14 +5,23 @@ Usando a API do *devarthurribeiro*, [**Github**](https://github.com/devarthurrib
 O app mostra dados por estado brasileiros, além de dados unificados de países  como Brasil/Itália/China.
 
 
+
 ![](/screenshots/screenshotcovidapp1.png)
 
 
+
 ![](/screenshots/screenshotcovidapprequest.png)
+
+
+
+
+## Mobile App
+![](/screenshots/screenshotapp1.png)    ![](/screenshots/screenshotapp2.png) 
+
 
 
 # Objetivos
  
  - [x] ~~Javascript/HTML/CSS~~
  - [ ] WebApp com ReactJS
- - [ ] MobileApp com ReactNative
+ - [x] MobileApp com ReactNative
