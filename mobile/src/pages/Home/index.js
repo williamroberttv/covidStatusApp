@@ -8,19 +8,20 @@ import logoImg from '../../assets/logo.png'
 
 export default function Home(){
     const [states, setStates] = useState([]);
-    const [brazilCases, setBrazilCases] = useState([]);
+    const [total, setTotal] = useState(0);
     const navigation = useNavigation();
     
-    /*async function requestBrasilCases(){
-        await fetch('https://covid19-brazil-api.now.sh/api/report/v1/brazil')
-        .then(res => {
-            return res.json();
+    async function requestBrasilCases(){
+        const totalCasesApi = 'https://covid19-brazil-api.now.sh/api/report/v1/brazil'
+        fetch(totalCasesApi)
+        .then(res =>{
+            return res.json()
         })
-        .then(brazilBody => {
-            const supercases = brazilBody.cases
+        .then(resBody =>{
+            setTotal(resBody.data.cases)
         })
+    
     }
-    */
     async function request(){
         const api = 'https://covid19-brazil-api.now.sh/api/report/v1'
         await fetch(api)
@@ -31,11 +32,14 @@ export default function Home(){
             setStates([...jsonBody.data])
         })
     }
-    function navigateToDetail(){
-        navigation.navigate('Detail')
+
+    function navigateToDetail(state){
+        navigation.navigate('Detail', {state})
     }
+
     useEffect(()=>{
         request();
+        requestBrasilCases();
     }, []);
 
     
@@ -43,7 +47,7 @@ export default function Home(){
         <View style={styles.container}>
             <View style={styles.header}>
                 <Image source={logoImg} />
-                <Text style={styles.headerText}>Total de <Text style={styles.headerTextBold}>0</Text></Text>
+                <Text style={styles.headerText}>Total de <Text style={styles.headerTextBold}>{total}</Text> casos</Text>
             </View>
             <Text style={styles.title}>Casos de Covid-19 no Brasil</Text>
             <Text style={styles.description}>Comece escolhendo o estado</Text>
@@ -55,14 +59,14 @@ export default function Home(){
                 showsVerticalScrollIndicator={false}
                 renderItem={({item: state})=>(
                     <View style={styles.states}>
-                        <Text style={styles.stateProperty}>{state.state}</Text>
-                        <Text style={styles.stateValue}>{state.uf}</Text>
+                        <Text style={styles.stateProperty}>{state.state}/{state.uf}</Text>
+                        
 
                         <Text style={styles.stateProperty}>Casos:</Text>
                         <Text style={styles.stateValue}>{state.cases}</Text>
 
                         <TouchableOpacity style={styles.detailsButton} 
-                        onPress={() => navigateToDetail()}>
+                        onPress={() => navigateToDetail(state)}>
                             <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
                             <Feather name="arrow-right" size={16} color="#f76981"/>
                                 

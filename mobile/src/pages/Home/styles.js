@@ -53,10 +53,11 @@ export default StyleSheet.create({
         fontSize:14,
         color: '#41414d',
         fontWeight: 'bold',
+        marginBottom:20,
     },
 
     stateValue:{
-        marginTop: 8,
+        marginTop: 0,
         fontSize: 15,
         marginBottom: 24,
         color: '#737380',
