@@ -16,7 +16,7 @@ O app mostra dados por estado brasileiros, além de dados unificados de países 
 
 
 ## Mobile App
-![](/screenshots/screenshotapp1.jpg){:height="50%" width="50%"}    ![](/screenshot/screenshotapp2.jpg){:height="50%" width="50%"} 
+
 
 
 
