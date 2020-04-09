@@ -1,11 +1,12 @@
 {
   "expo": {
     "name": "Covid Status App",
-    "slug": "mobile",
+    "slug": "CovidAppStatus",
+    "privacy":"public",
+    "sdkVersion":"36.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -22,7 +23,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.willrobertv.covidappstatus"
+    },
+    "android": {
+      "package": "com.willrobertv.covidappstatus"
     }
   }
 }

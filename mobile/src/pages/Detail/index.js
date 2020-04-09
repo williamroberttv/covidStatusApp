@@ -26,7 +26,7 @@ export default function Detail(){
                 <Text style={[styles.stateProperty,{marginTop: 0}]}>{state.state}/{state.uf}</Text>
               
 
-                <Text style={styles.stateProperty}>CASOS:</Text>
+                <Text style={styles.stateProperty}>CASOS CONFIRMADOS:</Text>
                 <Text style={styles.stateValue}>{state.cases}</Text>
 
                 <Text style={styles.stateProperty}>MORTES:</Text>
