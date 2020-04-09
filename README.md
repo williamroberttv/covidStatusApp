@@ -15,11 +15,11 @@ O app mostra dados por estado brasileiros, além de dados unificados de países 
 
 
 
-![](/screenshots/screenshotapp1.jpeg)
+![](/screenshots/screenshotapp1.jpg)
 
 
 
-![](/screenshots/screenshotapp2.jpeg)
+![](/screenshots/screenshotapp2.jpg)
 
 
 
