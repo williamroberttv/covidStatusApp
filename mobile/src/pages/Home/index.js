@@ -29,7 +29,9 @@ export default function Home(){
             return response.json();
         })
         .then(jsonBody =>{
-            setStates([...jsonBody.data])
+            const sortedData = jsonBody.data.sort((a,b) => (a.uf > b.uf ? 1 : -1));
+
+            setStates([...sortedData])
         })
     }
 
