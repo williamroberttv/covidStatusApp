@@ -2,6 +2,11 @@ import {StyleSheet} from 'react-native';
 import Constants from 'expo-constants';
 
 export default StyleSheet.create({
+    containerLoading:{
+        flex:1,
+        justifyContent:"center",
+        alignItems:"center",
+    },
     container: {
         flex: 1,
         paddingHorizontal: 24,
@@ -26,7 +31,7 @@ export default StyleSheet.create({
     title:{
         fontSize: 30,
         marginBottom: 16,
-        marginTop: 48,
+        marginTop: 15,
         color: '#13131a',
         fontWeight: 'bold',
     },
@@ -39,7 +44,6 @@ export default StyleSheet.create({
     },
 
     stateList: {
-        marginTop: 32,
     },
 
     states: {
@@ -74,4 +78,15 @@ export default StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
     },
+    reload:{
+        marginTop:15,
+        flexDirection: 'row',
+        justifyContent:'flex-end'
+    },
+    reloadText:{
+        marginRight: 10,
+        fontWeight:"bold",
+        fontSize: 16,
+        color: '#f76981'
+    }
 });
