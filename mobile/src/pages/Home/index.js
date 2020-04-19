@@ -18,7 +18,7 @@ export default function Home(){
             return res.json()
         })
         .then(resBody =>{
-            setTotal(resBody.data.cases)
+            setTotal(resBody.data.confirmed)
         })
     
     }
