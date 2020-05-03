@@ -10,7 +10,7 @@
 <br>
 
 ### :rocket: Tecnologias usadas
-Este maravilindo projeto foi desenvolvido com as seguintes tecnologias:
+Este projeto foi desenvolvido com as seguintes tecnologias:
 - [VanillaJS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Expo](https://expo.io/)
 - [Eslint](https://www.npmjs.com/package/eslint)
