@@ -9,6 +9,12 @@
 
 <br>
 
+## Demo
+
+<p align="center">
+  <img src="screenshots/covidapp.gif">
+</p>
+
 ### :rocket: Tecnologias usadas
 Este projeto foi desenvolvido com as seguintes tecnologias:
 - [VanillaJS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
